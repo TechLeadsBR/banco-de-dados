@@ -1,0 +1,136 @@
+CREATE DATABASE Talentos;
+GO
+
+USE Talentos;
+GO
+
+CREATE TABLE TipoUsuario(
+	IdTipoUsuario INT PRIMARY KEY IDENTITY,
+	TituloTipoUsuario VARCHAR (500) NOT NULL UNIQUE
+);
+GO
+
+CREATE TABLE Endereco(
+	IdEndereco INT PRIMARY KEY IDENTITY,
+	Cep VARCHAR (8) NOT NULL,
+	Logradouro VARCHAR(500) NOT NULL,
+	Bairro VARCHAR (100) NOT NULL,
+	Numero VARCHAR (20) NOT NULL,
+	Complemento VARCHAR(500) NOT NULL,
+	Localidade VARCHAR (200) NOT NULL,
+);
+GO 
+
+CREATE TABLE Administrador(
+	IdAdministrador INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(200) NOT NULL,
+	Email VARCHAR(200) NOT NULL UNIQUE,
+	Senha VARCHAR(200)  NOT NULL,
+	CPF VARCHAR(11) NOT NULL UNIQUE,
+	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario)
+);
+GO
+
+CREATE TABLE Empresa(
+	IdEmpresa INT PRIMARY KEY IDENTITY,
+	RazaoSocial VARCHAR(200) NOT NULL,
+	Email VARCHAR(200) NOT NULL UNIQUE,
+	Senha VARCHAR(200)  NOT NULL,
+	CNPJ VARCHAR (14) NOT NULL UNIQUE,
+	AtividadeEconomica VARCHAR (200) NOT NULL,
+	Telefone VARCHAR (200) NOT NULL,
+	TelefoneDois VARCHAR (200) NOT NULL,
+	NomeFoto VARCHAR (200),
+	DescricaoEmpresa TEXT NOT NULL,
+	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario)
+);
+GO
+
+CREATE TABLE Aluno(
+	IdAluno INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(200) NOT NULL,
+	Email VARCHAR(200) NOT NULL UNIQUE,
+	Senha VARCHAR(200) NOT NULL,
+	NomeSocial VARCHAR(200),
+	RG VARCHAR(9) NOT NULL UNIQUE,
+	CPF VARCHAR(11) NOT NULL UNIQUE,
+	DataNascimento DATE NOT NULL,
+	Genero VARCHAR(200) NOT NULL,
+	CursoSENAI VARCHAR(200) NOT NULL,
+	DataFormacao DATE NOT NULL,
+	Telefone VARCHAR(200) NOT NULL,
+	TipoDefiencia VARCHAR(200),
+	DetalheDeficiencia TEXT,
+	PreferenciaArea VARCHAR(200),
+	Descricao TEXT,
+	Linkedin VARCHAR(200),
+	GitHub VARCHAR(200),
+	NomeFoto VARCHAR(200),
+	PerfilComportamental VARCHAR(100),
+	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario),
+	IdEndereco INT FOREIGN KEY REFERENCES Endereco(IdEndereco)
+);
+GO
+
+CREATE TABLE Idioma (
+	IdIdioma INT PRIMARY KEY IDENTITY,
+	Idioma VARCHAR(200),
+	Nivel VARCHAR(200),
+	IdAluno INT FOREIGN KEY REFERENCES Aluno(IdAluno)
+);
+GO
+
+CREATE TABLE VagaEmprego(
+	IdVagaEmprego INT PRIMARY KEY IDENTITY,
+	Titulo VARCHAR (500) NOT NULL,
+	Nivel VARCHAR(200) NOT NULL,
+	Cidade VARCHAR (200) NOT NULL,
+	DescricaoVaga TEXT NOT NULL,
+	Habilidade TEXT NOT NULL,
+	RemuneracaoBeneficio VARCHAR (100),
+	TipoContrato VARCHAR (100) NOT NULL,
+	IdEmpresa INT FOREIGN KEY REFERENCES Empresa(IdEmpresa),
+);
+GO
+
+CREATE TABLE Estagio(
+	IdEstagio INT PRIMARY KEY IDENTITY,
+	Responsavel VARCHAR(200) NOT NULL,
+	Inicio DATE NOT NULL,
+	Termino DATE NOT NULL,
+	StatusContrato VARCHAR(200) NOT NULL,
+	Documentos BIT DEFAULT 0,
+	IdEmpresa INT FOREIGN KEY REFERENCES Empresa(IdEmpresa),
+	IdAluno INT FOREIGN KEY REFERENCES Aluno(IdAluno),
+);
+GO
+
+CREATE TABLE InscricaoEmprego(
+	IdInscricaoEmprego INT PRIMARY KEY IDENTITY,
+	DataInscricao DATE NOT NULL,
+	IdAluno INT FOREIGN KEY REFERENCES Aluno(IdAluno),
+	IdVagaEmprego INT FOREIGN KEY REFERENCES VagaEmprego (IdVagaEmprego)
+);
+GO
+
+CREATE TABLE ExperienciaProfissional(
+	IdExperienciaProfissional INT PRIMARY KEY IDENTITY, 
+	Empresa VARCHAR (500) NOT NULL,
+	Cargo VARCHAR (500) NOT NULL,
+	DataInico DATE NOT NULL, 
+	DataFim DATE,
+	Descricao TEXT,
+	IdAluno INT FOREIGN KEY REFERENCES Aluno(IdAluno),
+);
+GO
+
+CREATE TABLE FormacaoAcademica (
+	IdFormacaoAcademica INT PRIMARY KEY IDENTITY, 
+	NomeCurso VARCHAR (500) NOT NULL,
+	Instituicao VARCHAR (500) NOT NULL,
+	TipoCurso VARCHAR (500) NOT NULL,
+	InicioCurso DATE NOT NULL,
+	TerminoCurso DATE, 
+	IdAluno INT FOREIGN KEY REFERENCES Aluno(IdAluno),
+);
+GO
