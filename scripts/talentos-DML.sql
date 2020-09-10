@@ -64,7 +64,7 @@ SELECT * FROM Estagio
 
 INSERT INTO ExperienciaProfissional(Empresa, Cargo, DataInico, DataFim, Descricao, IdAluno)
 VALUES ('ISRINGHAUSEN',	'Jovem Aprendiz', '2019-08-12',	'2020-03-04', 'Lorem ipsum etiam vehicula dui a donec eget dictumst vestibulum, eros aliquam lacinia ut varius con', 1),
-	   ('Linx',	'Desenvolvedor Junior',	'2020-09-08', '2020-03-27', 'Lorem ipsum etiam vehicula dui a donec eget dictumst vestibulum, eros aliquam lacinia ut varius con',	3)
+	   ('Linx',	'Desenvolvedor Junior',	'2020-09-08', '2020-03-27', 'Lorem ipsum etiam vehicula dui a donec eget dictumst vestibulum, eros aliquam lacinia ut varius con',	2)
 GO
 SELECT * FROM ExperienciaProfissional
 
