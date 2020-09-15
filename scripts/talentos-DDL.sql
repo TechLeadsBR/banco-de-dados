@@ -16,7 +16,7 @@ CREATE TABLE Endereco(
 	Logradouro VARCHAR(500) NOT NULL,
 	Bairro VARCHAR (100) NOT NULL,
 	Numero VARCHAR (20) NOT NULL,
-	Complemento VARCHAR(500) NOT NULL,
+	Complemento VARCHAR(500),
 	Localidade VARCHAR (200) NOT NULL,
 );
 GO 
