@@ -4,15 +4,14 @@ GO
 INSERT INTO TipoUsuario(TituloTipoUsuario)
 VALUES ('Administrador'),
 	   ('Aluno'),
-	   ('Empresa'),
-	   ('Ex-aluno')
+	   ('Empresa')
 GO
 SELECT * FROM TipoUsuario;
 
 INSERT INTO Endereco(Cep, Logradouro, Bairro, Numero, Localidade, Complemento)
-VALUES ('15810400', 'Rua Estados Unidos', 'Jardim Monte LÌbano', '78', 'Catanduva', 'Bloco AB'),
-	   ('14079038', 'Rua Moreira da Silva', 'Residencial LÈo Gomes de Moraes', '12', 'Ribeir„o Preto', 'Rua sem saida'),
-	   ('12214000', 'Avenida Pico das Agulhas Negras', 'Jardim Altos de Santana', '100', 'S„o JosÈ dos Campos', 'Em frete a praÁa')
+VALUES ('15810400', 'Rua Estados Unidos', 'Jardim Monte L√≠bano', '78', 'Catanduva', 'Bloco AB'),
+	   ('14079038', 'Rua Moreira da Silva', 'Residencial L√©o Gomes de Moraes', '12', 'Ribeir√£o Preto', 'Rua sem saida'),
+	   ('12214000', 'Avenida Pico das Agulhas Negras', 'Jardim Altos de Santana', '100', 'S√£o Jos√© dos Campos', 'Em frete a pra√ßa')
 GO
 SELECT * FROM Endereco;
 
@@ -25,7 +24,7 @@ SELECT * FROM Aluno
 
 INSERT INTO Idioma(Nivel, Idioma, IdAluno)
 VALUES ('Intermediario', 'Ingles', 2),
-	   ('AvanÁado', 'Espanhol', 2),
+	   ('Avan√ßado', 'Espanhol', 2),
 	   ('Iniciante', 'Italiano', 2)
 GO
 SELECT * FROM Idioma
@@ -43,9 +42,9 @@ GO
 SELECT * FROM Empresa
 
 INSERT INTO VagaEmprego(Titulo, Nivel, Cidade, DescricaoVaga, Habilidade, RemuneracaoBeneficio, IdEmpresa, TipoContrato)
-VALUES ('Desenvolvedor Python Sao Paulo', 'Junior', 'S„o Paulo', 'Lorem ipsum etiam vehicula dui a donec eget dictumst vestibulum, eros aliquam lacinia ut varius con',	'Mestre muito bom zika', '5.000,00', 1,	'PJ'),
-	   ('Desenvolvedor Python Sao Paulo', 'Junior', 'S„o Paulo', 'Lorem ipsum etiam vehicula dui a donec eget dictumst vestibulum, eros aliquam lacinia ut varius con',	'Mestre muito bom zika', '5.000,00', 2,	'PJ'),
-	   ('Desenvolvedor Python Sao Paulo', 'Junior', 'S„o Paulo', 'Lorem ipsum etiam vehicula dui a donec eget dictumst vestibulum, eros aliquam lacinia ut varius con',	'Mestre muito bom zika', '5.000,00', 2,	'PJ')
+VALUES ('Desenvolvedor Python Sao Paulo', 'Junior', 'S√£o Paulo', 'Lorem ipsum etiam vehicula dui a donec eget dictumst vestibulum, eros aliquam lacinia ut varius con',	'Mestre muito bom zika', '5.000,00', 1,	'PJ'),
+	   ('Desenvolvedor Python Sao Paulo', 'Junior', 'S√£o Paulo', 'Lorem ipsum etiam vehicula dui a donec eget dictumst vestibulum, eros aliquam lacinia ut varius con',	'Mestre muito bom zika', '5.000,00', 2,	'PJ'),
+	   ('Desenvolvedor Python Sao Paulo', 'Junior', 'S√£o Paulo', 'Lorem ipsum etiam vehicula dui a donec eget dictumst vestibulum, eros aliquam lacinia ut varius con',	'Mestre muito bom zika', '5.000,00', 2,	'PJ')
 GO
 SELECT * FROM VagaEmprego
 
