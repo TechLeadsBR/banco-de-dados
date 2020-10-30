@@ -17,8 +17,8 @@ SELECT * FROM Endereco;
 
 
 INSERT INTO Aluno(Nome, Email, Senha, NomeSocial , RG, CPF, DataNascimento, Genero, CursoSENAI, DataFormacao, Telefone, TipoDefiencia, DetalheDeficiencia, PreferenciaArea, Descricao, Linkedin, GitHub, NomeFoto, PerfilComportamental, IdTipoUsuario, IdEndereco)
-VALUES ('Carlos Morette', 's@email.com', '123', 'mm' ,'395030142', '31670047094', '2002-07-14', 'Masculino', 'Desenvolvimento de Sistemas', '2019-12-12', '11947897845', 'aleijado', 'detalhe deficiencia', 'Backend', 'Organizado atencioso e varias qualidades boas', 'httlinkedin.com', 'httgithub.com', 'carlos_morette.png', 'Tubarao', 4, 2),
-	   ('Erica Sobral', 'erica@email.com', '123', 'mm' ,'395330142', '31675047094', '2002-07-14', 'Feminino', 'Desenvolvimento de Sistemas', '2019-12-12', '11947897845', 'aleijado', 'detalhe deficiencia', 'Backend', 'Organizada atenciosa e varias qualidades boas', 'httlinkedin.com', 'httgithub.com', 'erica.png', 'Tubarao', 4, 2)
+VALUES ('Carlos Morette', 's@email.com', '123', 'mm' ,'395030142', '31670047094', '2002-07-14', 'Masculino', 'Desenvolvimento de Sistemas', '2019-12-12', '11947897845', 'aleijado', 'detalhe deficiencia', 'Backend', 'Organizado atencioso e varias qualidades boas', 'httlinkedin.com', 'httgithub.com', 'carlos_morette.png', 'Tubarao', 2, 2),
+	   ('Erica Sobral', 'erica@email.com', '123', 'mm' ,'395330142', '31675047094', '2002-07-14', 'Feminino', 'Desenvolvimento de Sistemas', '2019-12-12', '11947897845', 'aleijado', 'detalhe deficiencia', 'Backend', 'Organizada atenciosa e varias qualidades boas', 'httlinkedin.com', 'httgithub.com', 'erica.png', 'Tubarao', 2, 2)
 GO
 SELECT * FROM Aluno
 
